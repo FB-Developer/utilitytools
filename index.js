@@ -23,7 +23,6 @@ insertDocument=(db,cb)=>{
     else
     {
       console.log(dt);
-
       flist=[];
     for (var temp of dt) {
         var deptList=Object.keys(temp);
@@ -31,11 +30,6 @@ insertDocument=(db,cb)=>{
           flist.push({dept:dept,fname:temp[dept]});
         }
       }
-
-
-
-
-
 
       var collection=db.collection('facultydetails');
       collection.remove({},(error,result)=>{});

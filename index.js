@@ -16,7 +16,10 @@ MongoClient.connect(url, function(err, client) {
 
 insertDocument=(db,cb)=>{
   var model = null;
+
   var xlsx  = './test.xlsx';
+  if(process.argv[2])
+    xlsx=process.argv[2];
   mongoxlsx.xlsx2MongoData(xlsx, model, function(error, dt) {
     if(error)
       console.log('Error::'+error);
